@@ -1,0 +1,11 @@
+FROM php:7.4-apache
+
+RUN chown www-data:www-data /var/www/
+RUN chmod -R 774 /var/www/
+
+COPY /trucorp /var/www/html/
+
+RUN service apache2 start
+RUN docker-php-ext-install mysqli
+
+EXPOSE 80

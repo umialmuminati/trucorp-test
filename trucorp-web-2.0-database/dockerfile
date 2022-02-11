@@ -1,0 +1,4 @@
+FROM mysql
+
+ENV MYSQL_DATABASE Trucorp
+ADD trucorp-db.sql /docker-entrypoint-initdb.d
